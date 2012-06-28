@@ -1,7 +1,13 @@
 function getClickHandler() {
     return function(info, tab) {
-        var url = info.linkUrl
-        chrome.experimental.downloads.download({url: url, filename: url}, function(id) {
+        var url = ''
+        if(info.linkUrl)
+            url = info.linkUrl
+        if(info.srcUrl)
+            url = info.srcUrl
+
+        chrome.experimental.downloads.download({url: url, method : "POST" }, function(id) {
+        alert(id);
         });
 
     };
@@ -10,6 +16,6 @@ function getClickHandler() {
 chrome.contextMenus.create({
     "title" : "neXus",
     "type" : "normal",
-    "contexts" : ["link"],
+    "contexts" : ["link","image"],
     "onclick" : getClickHandler()
 });
