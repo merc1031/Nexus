@@ -8,10 +8,10 @@
         "default_popup": "popup.html"
     },
     "background": {
-        "scripts": ["background.js"]
+        "page": "background.html"
     },
     "permissions": [
-        "experimental", "http://*/*", "https://*/*",
-        "contextMenus"
+        "http://*/*", "https://*/*",
+        "contextMenus", "downloads"
     ]
 }
