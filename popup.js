@@ -43,5 +43,45 @@ $(document).ready( function () {
         $("body .submit").click( function() { 
             sendOptions(); 
         } );
+        
+        $.ajax(
+                {
+                url: 'http://localhost:24900/opt',
+                type: "get",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function(result) {
+                    var $body = $(window.document.body);
+                    var $template = $(".template > .options", $body);
+                    for (res in result) {
+                        var $element = $template.clone();
+                        $element.appendTo($("body .form"));
+                        
+                        var enabled = $(".enabled", $element);
+                        var name = $(".name", $element);
+                        var notes = $(".notes", $element);
+                        var match = $(".match", $element);
+                        var route = $(".route", $element);
+                        if (result[res]['enabled']) {
+                            enabled.prop("checked", true);
+                        }else {
+                            enabled.prop("checked", false);
+                        }
+                        notes.val(result[res]['notes']);        
+                        match.val(result[res]['match']);        
+                        route.val(result[res]['route']);        
+                        name.val(res);        
+                        
+
+                    }
+                    var $element2 = $template.clone();
+                    $element2.appendTo($("body .form"));
+                },
+                error: function(result) {
+                    console.error('fail');
+                }
+
+                }
+              );
 
     } ) ;

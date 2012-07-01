@@ -7,7 +7,9 @@
                 min-width:357px;
                 overflow-x:hidden;
             }
-
+            .template {
+                visibility:hidden;
+            }
         </style>
 
         <!-- JavaScript and HTML must be in separate files for security. -->
@@ -15,7 +17,12 @@
         <script src="popup.js"></script>
     </head>
     <body>
-        <form name="opt" action="" METHOD="POST">
+        <form name="opt" action="" class="form" method="POST">
+            
+            <input type="button" name="submit" class='submit'/>
+        </form>
+
+        <div class="template" >
             <div class='options'>
                 <p><input type="checkbox" name="enabled" class="enabled"/>Enabled</p>
                 <p><input type="text" name="name" class="name"/>Name</p>
@@ -23,11 +30,6 @@
                 <p><input type="text" name="match" class="match"/>Match</p>
                 <p><input type="text" name="route" class="route"/>Route</p>
             </div>
-
-
-
-            
-            <input type="button" name="submit" class='submit'/>
-        </form>
+        </div>
     </body>
 </html>
