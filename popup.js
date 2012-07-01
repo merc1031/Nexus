@@ -29,7 +29,7 @@ function sendOptions() {
             data: JSON.stringify(obj),
             contentType: "application/json; charset=utf-8",
             success: function(result) {
-            
+                createForm();
             },
             error: function(result) {
                 console.error('fail');
@@ -38,9 +38,8 @@ function sendOptions() {
             }
           );
 }
-$(document).ready( function () {
 
-        
+function createForm() {
         $.ajax(
                 {
                 url: 'http://localhost:24900/opt',
@@ -94,5 +93,10 @@ $(document).ready( function () {
 
                 }
               );
+}
+
+$(document).ready( function () {
+        createForm();
+        
 
     } ) ;
