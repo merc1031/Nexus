@@ -1,18 +1,33 @@
 <!doctype html>
 <html>
-  <head>
-    <title>neXus</title>
-    <style>
-      body {
-        min-width:357px;
-        overflow-x:hidden;
-      }
+    <head>
+        <title>neXus</title>
+        <style>
+            body {
+                min-width:357px;
+                overflow-x:hidden;
+            }
 
-    </style>
+        </style>
 
-    <!-- JavaScript and HTML must be in separate files for security. -->
-    <script src="popup.js"></script>
-  </head>
-  <body>
-  </body>
+        <!-- JavaScript and HTML must be in separate files for security. -->
+        <script src='common/js/jquery-1.7.2.min.js'></script>
+        <script src="popup.js"></script>
+    </head>
+    <body>
+        <form name="opt" action="" METHOD="POST">
+            <div class='options'>
+                <p><input type="checkbox" name="enabled" class="enabled"/>Enabled</p>
+                <p><input type="text" name="name" class="name"/>Name</p>
+                <p><input type="text" name="notes" class="notes"/>Notes</p>
+                <p><input type="text" name="match" class="match"/>Match</p>
+                <p><input type="text" name="route" class="route"/>Route</p>
+            </div>
+
+
+
+            
+            <input type="button" name="submit" class='submit'/>
+        </form>
+    </body>
 </html>
