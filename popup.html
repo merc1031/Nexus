@@ -10,6 +10,10 @@
             .template {
                 visibility:hidden;
             }
+
+            .options { 
+                border:solid;
+            }
         </style>
 
         <!-- JavaScript and HTML must be in separate files for security. -->
@@ -23,11 +27,11 @@
 
         <div class="template" >
             <div class='options'>
-                <div><input type="checkbox" name="enabled" class="enabled"/>Enabled</div>
-                <div><input type="text" name="name" class="name"/>Name</div>
-                <div><input type="text" name="notes" class="notes"/>Notes</div>
-                <div><input type="text" name="match" class="match"/>Match</div>
-                <div><input type="text" name="route" class="route"/>Route</div>
+                <div>Enable<input type="checkbox" name="enabled" class="enabled"/></div>
+                <div>Name<input type="text" name="name" class="name"/></div>
+                <div>Notes<input type="text" name="notes" class="notes"/></div>
+                <div>Match<input type="text" name="match" class="match"/></div>
+                <div>Route<input type="text" name="route" class="route"/></div>
             </div>
             <div><input type="button" name="delete" value="Delete" class="delete"/></div>
             <div><input type="button" name="submit" value="Submit" class='submit'/></div>
